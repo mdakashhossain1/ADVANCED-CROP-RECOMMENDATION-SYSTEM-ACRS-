@@ -1,0 +1,39 @@
+======================================================================
+  ADVANCED CROP RECOMMENDATION SYSTEM (ACRS)
+  Research Results Summary
+======================================================================
+
+  DATASET
+    Features   : 12 (vs. 7 in baseline systems)
+    Crops      : 22 classes
+    Preprocessing: SMOTE-Tomek + StandardScaler
+
+  BASE MODELS (Top-3 by Accuracy)
+
+    LightGBM               Acc=79.900%  F1=80.854%  MCC=0.74212
+    XGBoost                Acc=79.400%  F1=80.921%  MCC=0.73674
+    Random Forest          Acc=79.050%  F1=81.068%  MCC=0.73470
+
+  STACKED ENSEMBLE (Two-Tier: ML + CNN-BiLSTM + MLP Meta-Learner)
+    Accuracy   : 80.3500%
+    F1 (W)     : 77.2524%
+    MCC        : 0.740429
+
+  XAI LAYER
+    ✅ SHAP  — Global beeswarm + Local waterfall (saved to plots/)
+    ✅ LIME  — Local feature contributions (saved to plots/)
+    ✅ DiCE  — Counterfactual 'what-if' explanations (saved to reports/)
+
+  OUTPUT FILES
+    plots/   — 13 PNG visualizations
+    reports/ — model_comparison.csv, shap_feature_importance.csv,
+               lime_explanation.csv, dice_counterfactuals.csv
+
+  NOVEL CONTRIBUTIONS (per PRD)
+    1. Two-tier stacked ensemble (ML + CNN-BiLSTM → MLP meta-learner)
+    2. Triple-layer XAI: SHAP + LIME + DiCE
+    3. 12-feature schema (beyond conventional 7-feature benchmark)
+    4. SMOTE-Tomek + MCC reporting (class imbalance addressed)
+    5. MC-Dropout uncertainty quantification + Top-3 recommendations
+
+======================================================================

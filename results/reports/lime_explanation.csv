@@ -1,0 +1,13 @@
+Feature Condition,Weight,Direction
+Rainfall > 0.41,0.4428548057636306,✅ Supports
+-0.83 < Temperature <= -0.08,-0.024391038529676095,❌ Against
+Wind_Speed > 0.81,0.015508942798996827,✅ Supports
+-0.68 < Irrigation_Type <= -0.02,0.014564286159499187,✅ Supports
+0.00 < K <= 0.81,0.010291052950650786,✅ Supports
+0.00 < P <= 0.81,-0.008330092791507003,❌ Against
+0.01 < Region <= 0.82,-0.007830696383163076,❌ Against
+-0.81 < Soil_Moisture <= -0.02,0.007582406356598725,✅ Supports
+ph <= -0.82,-0.0075559899001593125,❌ Against
+-0.83 < Fertilizer_Used <= 0.01,-0.005161036220751426,❌ Against
+-0.79 < Organic_Carbon <= 0.01,0.0044863618618529374,✅ Supports
+Previous_Crop <= -0.85,0.003338425175343946,✅ Supports
