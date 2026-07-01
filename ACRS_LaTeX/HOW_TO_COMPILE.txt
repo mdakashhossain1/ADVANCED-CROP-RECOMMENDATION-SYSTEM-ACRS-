@@ -1,0 +1,110 @@
+======================================================
+  HOW TO COMPILE THE ACRS LaTeX REPORT
+======================================================
+
+WHAT CHANGED IN THIS VERSION:
+  - \graphicspath{{images/}{./}} now searches BOTH the
+    images/ subfolder AND the root folder for images.
+  - All \MakeUppercase removed (caused Overleaf crash).
+  - All images confirmed as .png (pdflatex compatible).
+
+------------------------------------------------------
+OVERLEAF UPLOAD (Recommended — No Installation)
+------------------------------------------------------
+STEP 1: Create a ZIP of just the ACRS_LaTeX folder
+  - ZIP the entire ACRS_LaTeX/ folder so the archive
+    contains main.tex and the images/ subfolder.
+
+STEP 2: Upload to Overleaf
+  1. Go to https://www.overleaf.com
+  2. Click "New Project" → "Upload Project"
+  3. Upload the ZIP file.
+  4. Overleaf will extract it automatically.
+
+STEP 3: Verify the folder structure in Overleaf
+  After upload you should see in the Overleaf file tree:
+    main.tex
+    images/
+      01_dataset_distribution.png
+      02_correlation_heatmap.png
+      ... (all 30 images)
+
+STEP 4: Compile
+  - Compiler: pdfLaTeX  (check top-left menu in Overleaf)
+  - Click "Recompile" (run TWICE for correct TOC).
+
+FIXING "IMAGES NOT LOADING" ON OVERLEAF:
+  Cause: Images must be inside a folder called "images"
+         inside the Overleaf project (not at root level).
+  Fix A: Re-upload the ZIP — the images/ folder will be
+         recreated automatically.
+  Fix B: In Overleaf, click "New Folder" → name it "images"
+         → upload all .png files into that folder.
+  Fix C: If images are at root (not in images/ folder),
+         the {./} fallback in \graphicspath will find them
+         automatically — no action needed.
+
+------------------------------------------------------
+LOCAL COMPILE (MiKTeX or TeX Live)
+------------------------------------------------------
+Open terminal/command prompt in the ACRS_LaTeX/ folder:
+
+  pdflatex main.tex
+  pdflatex main.tex    <- Run TWICE for Table of Contents
+
+Output: main.pdf
+
+Install MiKTeX (Windows): https://miktex.org/download
+Install TeX Live (Win/Linux/Mac): https://tug.org/texlive/
+
+------------------------------------------------------
+REPORT FORMATTING
+------------------------------------------------------
+  Font     : Times New Roman (mathptmx package)
+  Body     : 12pt, double-spaced
+  Headings : 14pt Bold ALL CAPS
+  Paper    : A4 | Margins: Top 1in, Bottom 1in,
+             Left 1.5in, Right 1in
+  Pages    : Roman numerals (front matter),
+             Arabic from Chapter 1 onward
+
+------------------------------------------------------
+REPORT STRUCTURE (9 Chapters)
+------------------------------------------------------
+  Front    : Title Page, Declaration, Certificate,
+             Acknowledgement, Abstract,
+             TOC, List of Figures, List of Tables
+  Ch 1     : Introduction
+  Ch 2     : Literature Review
+  Ch 3     : System Analysis
+  Ch 4     : System Design
+  Ch 5     : Implementation and Results
+  Ch 6     : Testing and Validation
+  Ch 7     : Maintenance
+  Ch 8     : Future Scope
+  Ch 9     : Conclusion + References
+
+------------------------------------------------------
+IMAGES USED (all in images/ folder)
+------------------------------------------------------
+  01_dataset_distribution.png
+  02_correlation_heatmap.png
+  03_smote_balance.png
+  04_model_comparison.png
+  05_confusion_matrix_best.png
+  06_roc_curves_best.png
+  07_calibration_best.png
+  08_confusion_matrix_ensemble.png
+  09_roc_curves_ensemble.png
+  10_shap_summary.png
+  11_shap_local.png
+  12_lime_explanation.png
+  feat_importance_Random_Forest.png
+  docx_image2.png   (Spiral model diagram)
+  docx_image4.png   (System architecture)
+
+======================================================
+  Student : Prathista Biswas | Roll No: 256702004
+  Guide   : Dr. Ankur Biswas | HOD, CSE | TIT Agartala
+  Degree  : M.Tech Data Science | June 2026
+======================================================
